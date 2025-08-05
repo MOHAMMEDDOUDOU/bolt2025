@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Globe, Code, Palette, Image, Bot, Terminal as TerminalIcon, Monitor } from 'lucide-react';
-import DevEnvironment from './components/DevEnvironment';
+import { Globe, Palette, Image, Bot } from 'lucide-react';
+import BrowserApp from './components/apps/BrowserApp';
 import ColorPickerApp from './components/apps/ColorPickerApp';
 import ImageViewerApp from './components/apps/ImageViewerApp';
 import AIAssistantApp from './components/apps/AIAssistantApp';
@@ -21,18 +21,14 @@ interface Tab {
 }
 
 function App() {
-
-
-
-
-  const [activeTab, setActiveTab] = useState('dev-environment');
+  const [activeTab, setActiveTab] = useState('browser');
 
   const tabs: Tab[] = [
     {
-      id: 'dev-environment',
-      name: 'بيئة التطوير',
-      icon: <Monitor className="w-4 h-4" />,
-      component: <DevEnvironment />
+      id: 'browser',
+      name: 'المتصفح',
+      icon: <Globe className="w-4 h-4" />,
+      component: <BrowserApp />
     },
     {
       id: 'ai-assistant',
