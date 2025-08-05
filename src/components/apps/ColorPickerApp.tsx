@@ -135,6 +135,11 @@ const ColorPickerApp: React.FC = () => {
   const rgb = hexToRgb(selectedColor);
   const hsl = hexToHsl(selectedColor);
 
+  // تحديث التدرج عند تغيير المتغيرات
+  React.useEffect(() => {
+    updateGradient();
+  }, [gradientType, gradientAngle, gradientColors]);
+
   const predefinedColors = [
     '#FF0000', '#FF4500', '#FFA500', '#FFD700', '#FFFF00', '#ADFF2F',
     '#00FF00', '#00FA9A', '#00FFFF', '#0080FF', '#0000FF', '#4169E1',
@@ -504,10 +509,5 @@ const ColorPickerApp: React.FC = () => {
     </div>
   );
 };
-
-// تحديث useEffect لتحديث التدرج
-React.useEffect(() => {
-  updateGradient();
-}, [gradientType, gradientAngle, gradientColors]);
 
 export default ColorPickerApp;
