@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Copy, Palette, Eye, Save, Trash2, BadgeCent as Gradient, Download, Upload } from 'lucide-react';
+import { Copy, Palette, Eye, Save, Trash2, BadgeCent as Gradient, Download, Upload, Plus } from 'lucide-react';
 
 const ColorPickerApp: React.FC = () => {
   const [selectedColor, setSelectedColor] = useState('#3B82F6');
